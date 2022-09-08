@@ -22,7 +22,6 @@ public class MergeSort {
     }
 
     public void merge(ArrayList<Integer> arr, int left, int right, int mid) {
-
         int[] a = new int[mid - left + 1];
         int[] b = new int[right - mid];
 

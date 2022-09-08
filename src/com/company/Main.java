@@ -18,6 +18,7 @@ public class Main {
         for (int i : arr) {
             list.add(i);
         }
+
         System.out.println(list.toString());
 
     }
