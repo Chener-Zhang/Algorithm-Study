@@ -1,26 +1,24 @@
 package com.company;
 
 import com.company.SortingAlgorithem.MergeSort;
+import com.company.SortingAlgorithem.QuickSort;
 
 import java.util.ArrayList;
 
 import java.util.Random;
 
-
 public class Main {
 
     public static void main(String[] args) {
-        // write your code here
-        MergeSort mergeSort = new MergeSort();
+        //Defind Sort method
+        QuickSort quickSort = new QuickSort();
         ArrayList<Integer> list = new ArrayList<Integer>();
-
-        int[] arr = new int[]{8, 6, 24, 1, 2, 0, 26, 19, 23, 27};
+        int[] arr = new int[]{1, 2, 1, 3, 5};
         for (int i : arr) {
             list.add(i);
         }
-
+        quickSort.sort(list, 0, list.size() - 1);
         System.out.println(list.toString());
-
     }
 
     public static ArrayList<Integer> RandomNumberGenerator(int upperbound) {
