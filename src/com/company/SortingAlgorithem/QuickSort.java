@@ -8,13 +8,31 @@ public class QuickSort {
         if (low >= high) {
             return;
         }
-        int pivot = partition(list, low, high);
-        sort(list, low, pivot);
+        int pivot = partition2(list, low, high);
+        sort(list, low, pivot - 1);
         sort(list, pivot + 1, high);
+//        int pivot = partition1(list, low, high);
+//        sort(list, low, pivot);
+//        sort(list, pivot + 1, high);
 
     }
 
-    public int partition(ArrayList<Integer> list, int low, int high) {
+    public int partition2(ArrayList<Integer> list, int low, int high) {
+        int pivot = list.get(high);
+        int i = low - 1;
+        for (int j = low; j <= high - 1; j++) {
+            if (list.get(j) < pivot) {
+                i++;
+                swap(list, i, j);
+            }
+        }
+
+        swap(list, i + 1, high);
+
+        return i + 1;
+    }
+
+    public int partition1(ArrayList<Integer> list, int low, int high) {
 //        System.out.println("----------------------------------------------\n");
         int pivot = low;
         int start = low - 1;
@@ -24,10 +42,10 @@ public class QuickSort {
 
             do {
                 start++;
-            } while (list.get(start) < list.get(pivot) );
+            } while (list.get(start) < list.get(pivot));
             do {
                 end--;
-            } while (list.get(end) > list.get(pivot) );
+            } while (list.get(end) > list.get(pivot));
 
             if (start >= end) {
                 System.out.println(end);
@@ -36,7 +54,6 @@ public class QuickSort {
             swap(list, start, end);
 //            System.out.println(list.toString() + " low : " + low + " high : " + high);
         }
-
 
     }
 

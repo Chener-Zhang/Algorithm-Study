@@ -11,15 +11,15 @@ public class Main {
 
     public static void main(String[] args) {
         //Defind Sort method
-//        QuickSort quickSort = new QuickSort();
-//        ArrayList<Integer> list = new ArrayList<Integer>();
-//        int[] arr = new int[]{5, 8, 3, 9, 4, 1, 7};
-//        for (int i : arr) {
-//            list.add(i);
-//        }
-//        quickSort.sort(list, 0, list.size() - 1);
-//        System.out.println(list.toString());
-        RandomNumberGenerator(20);
+        QuickSort quickSort = new QuickSort();
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        int[] arr = new int[]{5, 8, 3, 9, 4, 1, 7};
+        for (int i : arr) {
+            list.add(i);
+        }
+        quickSort.sort(list, 0, list.size() - 1);
+        System.out.println(list.toString());
+//        RandomNumberGenerator(20);
     }
 
     public static ArrayList<Integer> RandomNumberGenerator(int upperbound) {
