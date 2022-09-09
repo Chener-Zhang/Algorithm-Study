@@ -9,18 +9,22 @@ public class HeapSort {
 
     public ArrayList<Integer> heap_sort(ArrayList<Integer> arr) {
         //start with the last has child node
+        System.out.println(arr.toString());
+        System.out.println("-------------------------------------------");
         int start = (arr.size() - 1) / 2;
         int len = arr.size();
+
         for (int i = start; i >= 0; i--) {
             heaplify(arr, len - 1, i);
         }
-
         System.out.println(arr.toString());
+
         for (int i = len - 1; i > 0; i--) {
             swap(arr, i, 0);
-            heaplify(arr, len, 0);
+            heaplify(arr, i, 0);
         }
         System.out.println(arr.toString());
+
         return null;
     }
 

@@ -1,5 +1,6 @@
 package com.company;
 
+import com.company.SortingAlgorithem.HeapSort;
 import com.company.SortingAlgorithem.MergeSort;
 import com.company.SortingAlgorithem.QuickSort;
 
@@ -10,12 +11,14 @@ import java.util.Random;
 public class Main {
 
     public static void main(String[] args) {
-        RandomNumberGenerator(15);
+
         int[] arr = new int[]{4, 13, 13, 6, 4, 0, 5, 8, 7, 3};
         ArrayList<Integer> list = new ArrayList<>();
         for (int i : arr) {
             list.add(i);
         }
+        HeapSort heapSort = new HeapSort();
+        heapSort.heap_sort(list);
     }
 
     public static ArrayList<Integer> RandomNumberGenerator(int upperbound) {
