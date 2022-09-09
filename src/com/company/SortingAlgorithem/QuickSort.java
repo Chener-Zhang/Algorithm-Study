@@ -3,37 +3,41 @@ package com.company.SortingAlgorithem;
 import java.util.ArrayList;
 
 public class QuickSort {
-    public ArrayList<Integer> sort(ArrayList<Integer> list, int low, int high) {
+    public void sort(ArrayList<Integer> list, int low, int high) {
 
-        if (low < high) {
-            int pivot = partition(list, low, high);
-            sort(list, low, pivot);
-            sort(list, pivot + 1, high);
+        if (low >= high) {
+            return;
         }
-        return list;
+        int pivot = partition(list, low, high);
+        sort(list, low, pivot);
+        sort(list, pivot + 1, high);
+
     }
 
     public int partition(ArrayList<Integer> list, int low, int high) {
+//        System.out.println("----------------------------------------------\n");
         int pivot = low;
-        int start = low;
-        int end = high;
-        while (start < end) {
+        int start = low - 1;
+        int end = high + 1;
+//        System.out.println(list.toString() + " low : " + low + " high : " + high);
+        while (true) {
 
             do {
                 start++;
-            } while (list.get(start) < list.get(pivot));
+            } while (list.get(start) < list.get(pivot) );
             do {
                 end--;
-            } while (list.get(end) > list.get(pivot));
+            } while (list.get(end) > list.get(pivot) );
 
             if (start >= end) {
+                System.out.println(end);
                 return end;
             }
             swap(list, start, end);
+//            System.out.println(list.toString() + " low : " + low + " high : " + high);
         }
 
-        swap(list, pivot, end);
-        return end;
+
     }
 
     public void swap(ArrayList<Integer> list, int a, int b) {
