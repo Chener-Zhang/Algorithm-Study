@@ -1,2 +1,7 @@
-package com.company.SortingAlgorithem;public class HeapSort {
+package com.company.SortingAlgorithem;
+
+public class HeapSort {
+    void heaplify() {
+
+    }
 }
