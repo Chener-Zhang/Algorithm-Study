@@ -1,24 +1,17 @@
 package com.company;
 
-import com.company.SortingAlgorithem.HeapSort;
-import com.company.SortingAlgorithem.MergeSort;
-import com.company.SortingAlgorithem.QuickSort;
+import com.company.Problem.TwoSum;
 
 import java.util.ArrayList;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class Main {
 
     public static void main(String[] args) {
-
-        int[] arr = new int[]{4, 13, 13, 6, 4, 0, 5, 8, 7, 3};
-        ArrayList<Integer> list = new ArrayList<>();
-        for (int i : arr) {
-            list.add(i);
-        }
-        HeapSort heapSort = new HeapSort();
-        heapSort.heap_sort(list);
+//        TwoSum twoSum = new TwoSum();
+//        System.out.println(twoSum.two_sum_unsorted(RandomNumberGenerator(20), 8).toString());
     }
 
     public static ArrayList<Integer> RandomNumberGenerator(int upperbound) {
