@@ -1,17 +1,29 @@
 package com.company;
 
 import com.company.Problem.TwoSum;
+import com.company.SortingAlgorithem.QuickSort;
+import com.company.SortingAlgorithem.findKthFrequency;
+import com.company.SortingAlgorithem.findKthLargest;
+import com.company.SortingAlgorithem.streamMedian;
 
 import java.util.ArrayList;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 
 public class Main {
 
     public static void main(String[] args) {
-//        TwoSum twoSum = new TwoSum();
-//        System.out.println(twoSum.two_sum_unsorted(RandomNumberGenerator(20), 8).toString());
+        QuickSort quickSort = new QuickSort();
+        int[] arr = new int[]{3, 8, 5, 2};
+        ArrayList<Integer> list = new ArrayList<>();
+        for (int i : arr) {
+            list.add(i);
+        }
+        streamMedian streamMedian = new streamMedian();
+        System.out.println(streamMedian.online_median(list));
+
     }
 
     public static ArrayList<Integer> RandomNumberGenerator(int upperbound) {

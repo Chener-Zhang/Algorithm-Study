@@ -1,6 +1,7 @@
 package com.company.SortingAlgorithem;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class QuickSort {
     public void sort(ArrayList<Integer> list, int low, int high) {
@@ -8,12 +9,13 @@ public class QuickSort {
         if (low >= high) {
             return;
         }
-        //Partition 1
+        //Partition 2
         int pivot = partition2(list, low, high);
+        System.out.println(list.toString());
         sort(list, low, pivot - 1);
         sort(list, pivot + 1, high);
 
-        //Partition 2
+        //Partition 1
 //        int pivot = partition1(list, low, high);
 //        sort(list, low, pivot);
 //        sort(list, pivot + 1, high);
