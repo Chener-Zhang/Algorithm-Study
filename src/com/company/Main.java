@@ -1,10 +1,7 @@
 package com.company;
 
-import com.company.Problem.TwoSum;
-import com.company.SortingAlgorithem.QuickSort;
-import com.company.SortingAlgorithem.findKthFrequency;
-import com.company.SortingAlgorithem.findKthLargest;
-import com.company.SortingAlgorithem.streamMedian;
+
+import com.company.SortingAlgorithem.MergeTwoList;
 
 import java.util.ArrayList;
 
@@ -15,14 +12,11 @@ import java.util.Random;
 public class Main {
 
     public static void main(String[] args) {
-        QuickSort quickSort = new QuickSort();
-        int[] arr = new int[]{3, 8, 5, 2};
-        ArrayList<Integer> list = new ArrayList<>();
-        for (int i : arr) {
-            list.add(i);
-        }
-        streamMedian streamMedian = new streamMedian();
-        System.out.println(streamMedian.online_median(list));
+        MergeTwoList MergeTwoList = new MergeTwoList();
+        int[] arr = new int[]{0};
+        int[] arr2 = new int[]{1};
+        MergeTwoList.merge(arr, 0, arr2, 1);
+        System.out.println(Arrays.toString(arr));
 
     }
 
