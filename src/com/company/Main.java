@@ -1,6 +1,8 @@
 package com.company;
 
 
+import com.company.Problem.fourSum;
+import com.company.Problem.fourSumTraditional;
 import com.company.SortingAlgorithem.MergeTwoList;
 
 import java.util.ArrayList;
@@ -12,11 +14,10 @@ import java.util.Random;
 public class Main {
 
     public static void main(String[] args) {
-        MergeTwoList MergeTwoList = new MergeTwoList();
-        int[] arr = new int[]{0};
-        int[] arr2 = new int[]{1};
-        MergeTwoList.merge(arr, 0, arr2, 1);
-        System.out.println(Arrays.toString(arr));
+        fourSumTraditional fourSumTraditional = new fourSumTraditional();
+        int[] arr = new int[]{1, 5, 2, 3, 8, 4, 6, 7};
+
+        System.out.println(fourSumTraditional.fourSumTraditional(arr, 15).toString());
 
     }
 
