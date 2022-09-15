@@ -2,6 +2,7 @@ package com.company;
 
 
 import com.company.SortingAlgorithem.MergeTwoList;
+import com.company.SortingAlgorithem.threeSum;
 
 import java.util.ArrayList;
 
@@ -12,12 +13,20 @@ import java.util.Random;
 public class Main {
 
     public static void main(String[] args) {
-        MergeTwoList MergeTwoList = new MergeTwoList();
-        int[] arr = new int[]{0};
-        int[] arr2 = new int[]{1};
-        MergeTwoList.merge(arr, 0, arr2, 1);
-        System.out.println(Arrays.toString(arr));
+        int[] arr = new int[256];
+        Arrays.fill(arr, -1);
+        System.out.println(arr['a']);
+        arr['b'] = 'c';
+        System.out.println(arr['b']);
 
+    }
+
+    public static ArrayList<Integer> toArrayList(int[] arr) {
+        ArrayList<Integer> res = new ArrayList<Integer>();
+        for (int i : arr) {
+            res.add(i);
+        }
+        return res;
     }
 
     public static ArrayList<Integer> RandomNumberGenerator(int upperbound) {
