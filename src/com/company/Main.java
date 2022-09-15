@@ -1,21 +1,19 @@
 package com.company;
 
-
-import com.company.Problem.fourSum;
+import com.company.Problem.findIntersection;
 import com.company.Problem.fourSumTraditional;
-import com.company.SortingAlgorithem.MergeTwoList;
-import com.company.SortingAlgorithem.threeSum;
 
 import java.util.ArrayList;
 
-import java.util.Arrays;
-import java.util.List;
 import java.util.Random;
 
 public class Main {
 
     public static void main(String[] args) {
-
+        fourSumTraditional fourSumTraditional = new fourSumTraditional();
+        int[] arr = new int[]{1000000000, 1000000000, 1000000000, 1000000000
+                - 294967296};
+        fourSumTraditional.fourSumTraditional(arr, -294967296);
     }
 
     public static ArrayList<Integer> toArrayList(int[] arr) {

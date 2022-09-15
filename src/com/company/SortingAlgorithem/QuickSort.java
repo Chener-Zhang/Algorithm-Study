@@ -1,7 +1,7 @@
 package com.company.SortingAlgorithem;
 
+
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class QuickSort {
     public void sort(ArrayList<Integer> list, int low, int high) {
