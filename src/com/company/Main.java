@@ -1,6 +1,8 @@
 package com.company;
 
 
+import com.company.Problem.fourSum;
+import com.company.Problem.fourSumTraditional;
 import com.company.SortingAlgorithem.MergeTwoList;
 import com.company.SortingAlgorithem.threeSum;
 
@@ -13,11 +15,6 @@ import java.util.Random;
 public class Main {
 
     public static void main(String[] args) {
-        int[] arr = new int[256];
-        Arrays.fill(arr, -1);
-        System.out.println(arr['a']);
-        arr['b'] = 'c';
-        System.out.println(arr['b']);
 
     }
 
