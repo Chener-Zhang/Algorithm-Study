@@ -1,19 +1,15 @@
 package com.company;
-
-import com.company.Problem.findIntersection;
-import com.company.Problem.fourSumTraditional;
+import com.company.RecursionAlgorithem.Combination;
 
 import java.util.ArrayList;
-
 import java.util.Random;
 
 public class Main {
 
     public static void main(String[] args) {
-        fourSumTraditional fourSumTraditional = new fourSumTraditional();
-        int[] arr = new int[]{1000000000, 1000000000, 1000000000, 1000000000
-                - 294967296};
-        fourSumTraditional.fourSumTraditional(arr, -294967296);
+        Combination combination = new Combination();
+        combination.combine(4,3);
+
     }
 
     public static ArrayList<Integer> toArrayList(int[] arr) {
