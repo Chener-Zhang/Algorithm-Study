@@ -1,5 +1,8 @@
 package com.company;
+
 import com.company.RecursionAlgorithem.Combination;
+import com.company.RecursionAlgorithem.Permutation;
+import com.company.RecursionAlgorithem.generateBinary;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -7,8 +10,8 @@ import java.util.Random;
 public class Main {
 
     public static void main(String[] args) {
-        Combination combination = new Combination();
-        combination.combine(4,3);
+        Permutation Permutation = new Permutation();
+        Permutation.get_permutations(toArrayList(new int[]{1, 2, 3, 4}));
 
     }
 
