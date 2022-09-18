@@ -3,6 +3,7 @@ package com.company;
 import com.company.RecursionAlgorithem.Combination;
 import com.company.RecursionAlgorithem.Permutation;
 import com.company.RecursionAlgorithem.generateBinary;
+import com.company.RecursionAlgorithem.subSet;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -10,9 +11,9 @@ import java.util.Random;
 public class Main {
 
     public static void main(String[] args) {
-        Permutation Permutation = new Permutation();
-        Permutation.get_permutations(toArrayList(new int[]{1, 2, 3, 4}));
 
+        subSet subSet = new subSet();
+        subSet.subsets(new int[]{1, 2, 3});
     }
 
     public static ArrayList<Integer> toArrayList(int[] arr) {
