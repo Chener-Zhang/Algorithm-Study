@@ -9,9 +9,8 @@ import java.util.Random;
 public class Main {
 
     public static void main(String[] args) {
-        String string = "RmR";
-        letterCasePermutation letterCasePermutation = new letterCasePermutation();
-        System.out.println(letterCasePermutation.letterCasePermutation(string).toString());
+        debug debug = new debug();
+        debug.find_combinations(5, 2);
     }
 
 
