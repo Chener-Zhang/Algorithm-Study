@@ -1,9 +1,6 @@
 package com.company;
 
-import com.company.RecursionAlgorithem.Combination;
-import com.company.RecursionAlgorithem.Permutation;
-import com.company.RecursionAlgorithem.generateBinary;
-import com.company.RecursionAlgorithem.subSet;
+import com.company.RecursionAlgorithem.*;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -12,8 +9,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-        subSet subSet = new subSet();
-        subSet.subsets(new int[]{1, 2, 3});
+        subSetStringVersion subSetStringVersion = new subSetStringVersion();
+        System.out.println(subSetStringVersion.generate_all_subsets("abc").toString());
     }
 
     public static ArrayList<Integer> toArrayList(int[] arr) {
