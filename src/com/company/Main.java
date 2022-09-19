@@ -3,15 +3,15 @@ package com.company;
 import com.company.RecursionAlgorithem.*;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        subSetStringVersion subSetStringVersion = new subSetStringVersion();
-        System.out.println(subSetStringVersion.generate_all_subsets("abc").toString());
     }
+
 
     public static ArrayList<Integer> toArrayList(int[] arr) {
         ArrayList<Integer> res = new ArrayList<Integer>();
