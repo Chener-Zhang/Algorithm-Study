@@ -9,8 +9,8 @@ import java.util.Random;
 public class Main {
 
     public static void main(String[] args) {
-        get_distinct_subsets get_distinct_subsets = new get_distinct_subsets();
-        System.out.println(get_distinct_subsets.get_distinct_subsets("abc"));
+        phoneNumber phoneNumber = new phoneNumber();
+        System.out.println(phoneNumber.get_words_from_phone_number("1010101").toString());
     }
 
 
