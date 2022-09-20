@@ -16,6 +16,7 @@ public class subSetStringVersion {
             res.add(temp);
             return;
         }
+
         //include
         temp += s.charAt(level);
         helper(level + 1, s, res, temp);

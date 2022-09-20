@@ -9,8 +9,8 @@ import java.util.Random;
 public class Main {
 
     public static void main(String[] args) {
-        debug debug = new debug();
-        debug.find_combinations(5, 2);
+        get_distinct_subsets get_distinct_subsets = new get_distinct_subsets();
+        System.out.println(get_distinct_subsets.get_distinct_subsets("abc"));
     }
 
 
