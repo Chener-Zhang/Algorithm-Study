@@ -10,8 +10,7 @@ import java.util.Random;
 public class Main {
 
     public static void main(String[] args) {
-        combinationII combinationII = new combinationII();
-        combinationII.combinationSum2(new int[]{10, 1, 2, 7, 6, 1, 5}, 8);
+
     }
 
 
