@@ -1,6 +1,7 @@
 package com.company;
 
 import com.company.RecursionAlgorithem.*;
+import com.company.Problem.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -9,8 +10,8 @@ import java.util.Random;
 public class Main {
 
     public static void main(String[] args) {
-        phoneNumber phoneNumber = new phoneNumber();
-        System.out.println(phoneNumber.get_words_from_phone_number("1010101").toString());
+        combinationII combinationII = new combinationII();
+        combinationII.combinationSum2(new int[]{10, 1, 2, 7, 6, 1, 5}, 8);
     }
 
 
