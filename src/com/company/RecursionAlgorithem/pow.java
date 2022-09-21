@@ -19,4 +19,29 @@ public class pow {
             return res * res * x;
         }
     }
+
+    // Long version
+//    public Integer calculate_power(Long a, Long b) {
+//        // Write your code here.
+//        if (b < 0) {
+//            a = 1 / a;
+//        }
+//
+//        return helper(a, b);
+//    }
+//
+//    public Integer helper(Long a, Long b) {
+//        if (a == 0) return 0;
+//        if (b == 0) return 1;
+//        int res = helper(a, b / 2);
+//        res = res * res;
+//
+//        if (b % 2 == 0) {
+//            return res;
+//
+//        } else {
+//            return (int) (res * a);
+//        }
+//    }
+
 }
