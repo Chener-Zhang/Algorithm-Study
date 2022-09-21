@@ -7,7 +7,7 @@ public class nQueen {
     int n;
     List<List<String>> res;
 
-    public List<List<String>> solveNQueens(int n) {
+    public List<List<String>> find_all_arrangements(int n) {
         //initialization
         board = boardInit(n);
         this.n = n;

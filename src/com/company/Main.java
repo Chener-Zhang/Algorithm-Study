@@ -11,7 +11,7 @@ public class Main {
 
     public static void main(String[] args) {
         nQueen nQueen = new nQueen();
-        System.out.println(nQueen.solveNQueens(4));
+        System.out.println(nQueen.find_all_arrangements(4));
 
     }
 
