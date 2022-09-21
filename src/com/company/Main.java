@@ -10,7 +10,8 @@ import java.util.Random;
 public class Main {
 
     public static void main(String[] args) {
-
+        pow myPow = new pow();
+        myPow.myPow(2, 10);
     }
 
 
