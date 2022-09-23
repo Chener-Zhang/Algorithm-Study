@@ -5,33 +5,29 @@ import java.util.PriorityQueue;
 import java.util.Queue;
 
 public class debug {
-    debug() {
 
-    }
-
-
-    public ArrayList<ArrayList<Integer>> find_combinations(Integer n, Integer k) {
+    public Boolean check_if_sum_possible(ArrayList<Long> arr, Long k) {
         // Write your code here.
-        ArrayList<ArrayList<Integer>> res = new ArrayList<>();
-        helper(1, n, k, new ArrayList(), res);
-        System.out.println(res.toString());
-        return res;
+        boolean tracker = false;
+        tracker = helper(arr, k, Long.valueOf(0), tracker, 0);
+        return tracker;
     }
 
-    public void helper(int level, Integer n, Integer k, ArrayList<Integer> temp, ArrayList<ArrayList<Integer>> res) {
-        //Base case
-        if (temp.size() == k) {
-            res.add(new ArrayList(temp));
-            return;
-        }
+    public boolean helper(ArrayList<Long> arr, Long k, Long sum, boolean tracker, int index) {
 
-        for (int i = level; i <= n; i++) {
-            temp.add(i);
-            helper(i + 1, n, k, temp, res);
-            temp.remove(temp.size() - 1);
+        if (arr.size() == 1) {
+            return arr.get(0).equals(k);
         }
-
+        if (sum.equals(k)) {
+            tracker = true;
+            return tracker;
+        }
+        for (int i = index; i < arr.size(); i++) {
+            sum += arr.get(i);
+            tracker |= helper(arr, k, sum, tracker, i + 1);
+            sum -= arr.get(i);
+        }
+        return tracker;
     }
-
 
 }

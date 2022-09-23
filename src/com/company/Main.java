@@ -10,6 +10,12 @@ import java.util.Random;
 public class Main {
 
     public static void main(String[] args) {
+        debug debug = new debug();
+        ArrayList<Long> arr = new ArrayList<>();
+        arr.add(Long.valueOf(10));
+        arr.add(Long.valueOf(20));
+        System.out.println(debug.check_if_sum_possible(arr, Long.valueOf(0)));
+
 
     }
 
