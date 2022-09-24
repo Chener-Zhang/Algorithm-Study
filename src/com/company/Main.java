@@ -10,8 +10,18 @@ public class Main {
 
     public static void main(String[] args) {
 
-        node node = new node(10);
-        System.out.println(node.value);
+        node root = new node(5);
+        Tree tree = new Tree();
+        tree.insert(root, 3);
+        tree.insert(root, 6);
+        tree.insert(root, 2);
+        tree.insert(root, 4);
+        tree.insert(root, 7);
+        tree.printLevelOrder(root);
+        System.out.println();
+        tree.deleteNode(root, 4);
+        tree.printLevelOrder(root);
+
     }
 
 
