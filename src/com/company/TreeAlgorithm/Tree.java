@@ -54,40 +54,4 @@ public class Tree {
         return root;
     }
 
-    //----------------------------------------------------------------------------------------------------------> delete later
-    public void printLevelOrder(node root) {
-        int h = height(root);
-        int i;
-        for (i = 1; i <= h; i++) {
-            printCurrentLevel(root, i);
-            System.out.print(System.lineSeparator());
-        }
-    }
-
-    /* Compute the "height" of a tree -- the number of
-    nodes along the longest path from the root node
-    down to the farthest leaf node.*/
-    public int height(node root) {
-        if (root == null) return 0;
-        else {
-            /* compute  height of each subtree */
-            int lheight = height(root.left);
-            int rheight = height(root.right);
-
-            /* use the larger one */
-            if (lheight > rheight) return (lheight + 1);
-            else return (rheight + 1);
-        }
-    }
-
-    /* Print nodes at the current level */
-    public void printCurrentLevel(node root, int level) {
-        if (root == null) return;
-        if (level == 1) System.out.print(root.value + " ");
-        else if (level > 1) {
-            printCurrentLevel(root.left, level - 1);
-            printCurrentLevel(root.right, level - 1);
-        }
-
-    }
 }
