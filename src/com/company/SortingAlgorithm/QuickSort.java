@@ -1,4 +1,4 @@
-package com.company.SortingAlgorithem;
+package com.company.SortingAlgorithm;
 
 
 import java.util.ArrayList;

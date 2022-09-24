@@ -1,7 +1,6 @@
-package com.company.RecursionAlgorithem;
+package com.company.RecursionAlgorithm;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 public class Combination {

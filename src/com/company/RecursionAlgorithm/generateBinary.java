@@ -1,4 +1,4 @@
-package com.company.RecursionAlgorithem;
+package com.company.RecursionAlgorithm;
 
 import java.util.ArrayList;
 

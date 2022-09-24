@@ -1,10 +1,6 @@
 package com.company;
 
-import com.company.RecursionAlgorithem.*;
-import com.company.Problem.*;
-
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Random;
 
 public class Main {

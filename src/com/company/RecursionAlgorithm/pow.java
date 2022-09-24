@@ -1,4 +1,4 @@
-package com.company.RecursionAlgorithem;
+package com.company.RecursionAlgorithm;
 
 public class pow {
     public double myPow(double x, int n) {

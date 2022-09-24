@@ -1,8 +1,6 @@
-package com.company.RecursionAlgorithem;
+package com.company.RecursionAlgorithm;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.TimeoutException;
 
 public class addOperators {
     String num;

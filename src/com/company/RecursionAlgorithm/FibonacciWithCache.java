@@ -1,4 +1,4 @@
-package com.company.RecursionAlgorithem;
+package com.company.RecursionAlgorithm;
 
 public class FibonacciWithCache {
     public Integer find_fibonacci(Integer n) {

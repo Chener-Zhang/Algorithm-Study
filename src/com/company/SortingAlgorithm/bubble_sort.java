@@ -1,7 +1,6 @@
-package com.company.SortingAlgorithem;
+package com.company.SortingAlgorithm;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 class bubble_sort {
 
