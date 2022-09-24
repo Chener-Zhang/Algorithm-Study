@@ -1,16 +1,17 @@
 package com.company;
 
+import com.company.TreeAlgorithm.Tree;
+import com.company.TreeAlgorithm.node;
+
 import java.util.ArrayList;
 import java.util.Random;
 
 public class Main {
 
     public static void main(String[] args) {
-        debug debug = new debug();
-        int[] arr = new int[]{1, 2, 3};
-        debug.subsets(arr);
 
-
+        node node = new node(10);
+        System.out.println(node.value);
     }
 
 
