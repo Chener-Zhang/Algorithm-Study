@@ -11,15 +11,17 @@ public class Main {
 
         TreeNode root = new TreeNode(20);
         Tree tree = new Tree();
-        tree.insert(root, 15);
-        tree.insert(root, 10);
-        tree.insert(root, 17);
-        tree.insert(root, 25);
-        tree.insert(root, 23);
-        tree.insert(root, 27);
+        preOrder preOrder = new preOrder();
         levelOrderTraversal levelOrderTraversal = new levelOrderTraversal();
+        int[] arr = new int[]{10, 15, 25, 21, 27, 8};
+        for (int i : arr) {
+            tree.insert(root, i);
+        }
         levelOrderTraversal.levelOrder(root);
         System.out.println(levelOrderTraversal.res.toString());
+        preOrder.preorderTraversal(root);
+
+
     }
 
 
