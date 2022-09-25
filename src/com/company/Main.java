@@ -1,7 +1,7 @@
 package com.company;
 
 import com.company.TreeAlgorithm.Tree;
-import com.company.TreeAlgorithm.node;
+import com.company.TreeAlgorithm.TreeNode;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -10,17 +10,14 @@ public class Main {
 
     public static void main(String[] args) {
 
-        node root = new node(5);
+        TreeNode root = new TreeNode(5);
         Tree tree = new Tree();
         tree.insert(root, 3);
         tree.insert(root, 6);
         tree.insert(root, 2);
         tree.insert(root, 4);
         tree.insert(root, 7);
-        tree.printLevelOrder(root);
         System.out.println();
-        tree.deleteNode(root, 4);
-        tree.printLevelOrder(root);
 
     }
 
