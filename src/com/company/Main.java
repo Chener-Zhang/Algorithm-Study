@@ -11,7 +11,7 @@ public class Main {
 
         TreeNode root = new TreeNode(20);
         Tree tree = new Tree();
-        preOrder preOrder = new preOrder();
+        treeTraversal preOrder = new treeTraversal();
         levelOrderTraversal levelOrderTraversal = new levelOrderTraversal();
         int[] arr = new int[]{10, 15, 25, 21, 27, 8};
         for (int i : arr) {
@@ -19,7 +19,7 @@ public class Main {
         }
         levelOrderTraversal.levelOrder(root);
         System.out.println(levelOrderTraversal.res.toString());
-        preOrder.preorderTraversal(root);
+        preOrder.inorder(root);
 
 
     }
