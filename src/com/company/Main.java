@@ -9,17 +9,14 @@ public class Main {
 
     public static void main(String[] args) {
 
-        TreeNode root = new TreeNode(20);
+        TreeNode root = new TreeNode(8);
         Tree tree = new Tree();
-        treeTraversal preOrder = new treeTraversal();
-        levelOrderTraversal levelOrderTraversal = new levelOrderTraversal();
-        int[] arr = new int[]{10, 15, 25, 21, 27, 8};
+        zigzagTraversal zigzagTraversal = new zigzagTraversal();
+        int[] arr = new int[]{3,1,6,4,7,10,14,13};
         for (int i : arr) {
             tree.insert(root, i);
         }
-        levelOrderTraversal.levelOrder(root);
-        System.out.println(levelOrderTraversal.res.toString());
-        preOrder.inorder(root);
+        zigzagTraversal.zigzagTraversalQueue(root);
 
 
     }
