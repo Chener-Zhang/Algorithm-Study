@@ -3,7 +3,6 @@ package com.company.TreeAlgorithm;
 public class sortedListToBST {
     public TreeNode sortedListToBST(ListNode head) {
         if (head == null) return null;
-
         ListNode mid = findmid(head);
         TreeNode node = new TreeNode(mid.val);
         if (head == mid) return node;
