@@ -24,6 +24,7 @@ public class levelOrderTraversal {
             }
             res.add(temp);
         }
+        System.out.println(res.toString());
         return res;
     }
 

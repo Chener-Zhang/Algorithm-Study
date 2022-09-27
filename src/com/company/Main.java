@@ -8,20 +8,22 @@ import java.util.Random;
 public class Main {
 
     public static void main(String[] args) {
-
-        TreeNode root = new TreeNode(8);
-        Tree tree = new Tree();
-        zigzagTraversal zigzagTraversal = new zigzagTraversal();
-        int[] arr = new int[]{3,1,6,4,7,10,14,13};
-        for (int i : arr) {
-            tree.insert(root, i);
-        }
-        zigzagTraversal.zigzagTraversalQueue(root);
-
-
+        //Methods
+        levelOrderTraversal levelOrderTraversal = new levelOrderTraversal();
+        printAllRouteTree printAllRouteTree = new printAllRouteTree();
+        TreeNode root = new TreeNode(1);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(3);
+        root.left.left = new TreeNode(4);
+        root.left.right = new TreeNode(5);
+        root.right.left = new TreeNode(6);
+        root.right.right = new TreeNode(7);
+        levelOrderTraversal.iterativeSolutionLevelOrder(root);
+        printAllRouteTree.all_paths_of_a_binary_tree(root);
     }
 
 
+    //Tools---------------------------------------------------------------------------------------------------------->
     public static ArrayList<Integer> toArrayList(int[] arr) {
         ArrayList<Integer> res = new ArrayList<Integer>();
         for (int i : arr) {
