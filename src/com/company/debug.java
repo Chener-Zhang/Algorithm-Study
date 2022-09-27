@@ -1,27 +1,33 @@
 package com.company;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.PriorityQueue;
-import java.util.Queue;
+import com.company.TreeAlgorithm.TreeNode;
+
+import java.util.*;
 
 public class debug {
+    public List<String> binaryTreePaths(TreeNode root) {
+        List<String> list = new ArrayList<String>();
+        Queue<TreeNode> qNode = new LinkedList<TreeNode>();
+        Queue<String> qStr = new LinkedList<String>();
 
+        if (root == null) return list;
+        qNode.add(root);
+        qStr.add("");
+        while (!qNode.isEmpty()) {
+            TreeNode curNode = qNode.remove();
+            String curStr = qStr.remove();
 
-    public List<List<Integer>> subsets(int[] nums) {
-        List<List<Integer>> res = new ArrayList<>();
-        helper(res, new ArrayList<>(), 0, nums);
-        System.out.println(res.toString());
-        return res;
-    }
-
-    public void helper(List<List<Integer>> res, List<Integer> temp, int index, int[] nums) {
-        res.add(new ArrayList<>(temp));
-        for (int i = index; i < nums.length; i++) {
-            temp.add(nums[i]);
-            helper(res, temp, i + 1, nums);
-            temp.remove(temp.size() - 1);
+            if (curNode.left == null && curNode.right == null) list.add(curStr + curNode.val);
+            if (curNode.left != null) {
+                qNode.add(curNode.left);
+                qStr.add(curStr + curNode.val + "->");
+            }
+            if (curNode.right != null) {
+                qNode.add(curNode.right);
+                qStr.add(curStr + curNode.val + "->");
+            }
         }
+        return list;
     }
 
 }

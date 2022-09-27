@@ -10,7 +10,9 @@ public class Main {
     public static void main(String[] args) {
         //Methods
         levelOrderTraversal levelOrderTraversal = new levelOrderTraversal();
-        printAllRouteTree printAllRouteTree = new printAllRouteTree();
+        debug debug = new debug();
+
+        //Init the value
         TreeNode root = new TreeNode(1);
         root.left = new TreeNode(2);
         root.right = new TreeNode(3);
@@ -18,8 +20,10 @@ public class Main {
         root.left.right = new TreeNode(5);
         root.right.left = new TreeNode(6);
         root.right.right = new TreeNode(7);
+
+        //Run the test
         levelOrderTraversal.iterativeSolutionLevelOrder(root);
-        printAllRouteTree.all_paths_of_a_binary_tree(root);
+        System.out.println(debug.binaryTreePaths(root));
     }
 
 
