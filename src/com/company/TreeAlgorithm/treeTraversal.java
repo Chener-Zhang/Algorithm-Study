@@ -7,6 +7,7 @@ import java.util.Stack;
 
 public class treeTraversal {
 
+    //Post Order DFS Solution
     public ArrayList<Integer> postorder_traversal(TreeNode root) {
         // Write your code here.
         Stack<TreeNode> stack = new Stack<>();
