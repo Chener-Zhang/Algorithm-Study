@@ -3,8 +3,36 @@ package com.company.TreeAlgorithm;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Stack;
 
 public class treeTraversal {
+
+    public ArrayList<Integer> postorder_traversal(TreeNode root) {
+        // Write your code here.
+        Stack<TreeNode> stack = new Stack<>();
+        ArrayList<Integer> res = new ArrayList<Integer>();
+
+        TreeNode current = root;
+        TreeNode pre = null;
+
+        while (current != null || !stack.isEmpty()) {
+            while (current != null) {
+                stack.push(current);
+                current = current.left;
+            }
+
+            if (stack.peek().right == null || pre == stack.peek().right) {
+                pre = stack.pop();
+                res.add(pre.val);
+            } else {
+                current = stack.peek().right;
+            }
+        }
+
+
+        return res;
+    }
+
     //root-left-right
     public List<Integer> preorderTraversal(TreeNode root) {
         List<Integer> res = new ArrayList<>();
@@ -26,7 +54,7 @@ public class treeTraversal {
         TreeNode current = root;
         LinkedList<TreeNode> stack = new LinkedList<>();
 
-        while (!stack.isEmpty() || current!=null) {
+        while (!stack.isEmpty() || current != null) {
             while (current != null) {
                 stack.add(current);
                 current = current.left;
