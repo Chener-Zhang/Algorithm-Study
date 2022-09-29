@@ -20,9 +20,6 @@ public class Main {
         levelOrderTraversal levelOrderTraversal = new levelOrderTraversal();
         levelOrderTraversal.iterativeSolutionLevelOrder(root);
 
-        lowestCommonAncestor lowestCommonAncestor = new lowestCommonAncestor();
-        lowestCommonAncestor.lowestCommonAncestor(root, new TreeNode(5), new TreeNode(4));
-
     }
 
 
