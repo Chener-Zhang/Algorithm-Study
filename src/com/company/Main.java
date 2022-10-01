@@ -1,16 +1,17 @@
 package com.company;
 
-import com.company.GraphAlgorithm.convertEdgesListToAdjacentList;
-import com.company.TreeAlgorithm.*;
+import com.company.GraphAlgorithm.ConvertEdgeListToAdjacencyMatrix;
+import com.company.GraphAlgorithm.graphTestGenerator;
 
-import java.util.*;
 
 public class Main {
 
     public static void main(String[] args) {
-        convertEdgesListToAdjacentList convertEdgesListToAdjacentList = new convertEdgesListToAdjacentList();
-        convertEdgesListToAdjacentList.runner();
 
+        graphTestGenerator graphTestGenerator = new graphTestGenerator();
+
+        ConvertEdgeListToAdjacencyMatrix ConvertEdgeListToAdjacencyMatrix = new ConvertEdgeListToAdjacencyMatrix();
+        ConvertEdgeListToAdjacencyMatrix.convert_edge_list_to_adjacency_matrix(5,graphTestGenerator.toArrayList(new int[][]{{0, 1}, {1, 4}, {1, 2}, {1, 3}, {3, 4}}));
     }
 
 
