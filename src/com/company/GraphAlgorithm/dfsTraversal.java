@@ -7,6 +7,8 @@ public class dfsTraversal {
     public ArrayList<Integer> dfs_traversal(Integer n, ArrayList<ArrayList<Integer>> edges) {
         // Write your code here.
         LinkedList<Integer> edgesList[] = new LinkedList[n];
+        ArrayList<Integer> res = new ArrayList<>();
+        boolean[] visited = new boolean[n];
         for (int i = 0; i < n; i++) {
             edgesList[i] = new LinkedList<>();
         }
@@ -15,11 +17,23 @@ public class dfsTraversal {
             edgesList[list.get(1)].add(list.get(0));
         }
 //        printer(edgesList);
-        return new ArrayList();
+        for (int i = 0; i < n; i++) {
+            helper(i, edgesList, res, visited);
+        }
+//        System.out.println(res.toString());
+        return res;
     }
 
-    public void helper() {
-
+    public void helper(int start, LinkedList<Integer>[] edgesList, ArrayList<Integer> res, boolean[] visited) {
+        if (!visited[start]) {
+            visited[start] = true;
+            res.add(start);
+        } else {
+            return;
+        }
+        for (int i : edgesList[start]) {
+            helper(i, edgesList, res, visited);
+        }
     }
 
     public void printer(LinkedList<Integer>[] adjacentArr) {
