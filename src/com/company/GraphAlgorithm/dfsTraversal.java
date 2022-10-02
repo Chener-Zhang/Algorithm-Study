@@ -16,11 +16,11 @@ public class dfsTraversal {
             edgesList[list.get(0)].add(list.get(1));
             edgesList[list.get(1)].add(list.get(0));
         }
-//        printer(edgesList);
+
         for (int i = 0; i < n; i++) {
             helper(i, edgesList, res, visited);
         }
-//        System.out.println(res.toString());
+
         return res;
     }
 
