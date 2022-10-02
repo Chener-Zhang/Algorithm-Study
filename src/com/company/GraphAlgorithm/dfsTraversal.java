@@ -18,21 +18,21 @@ public class dfsTraversal {
         }
 
         for (int i = 0; i < n; i++) {
-            helper(i, edgesList, res, visited);
+            if (!visited[i]) {
+                dfs(i, edgesList, res, visited);
+            }
         }
-
+        System.out.println(res);
         return res;
     }
 
-    public void helper(int start, LinkedList<Integer>[] edgesList, ArrayList<Integer> res, boolean[] visited) {
-        if (!visited[start]) {
-            visited[start] = true;
-            res.add(start);
-        } else {
-            return;
-        }
+    public void dfs(int start, LinkedList<Integer>[] edgesList, ArrayList<Integer> res, boolean[] visited) {
+        visited[start] = true;
+        res.add(start);
         for (int i : edgesList[start]) {
-            helper(i, edgesList, res, visited);
+            if (!visited[i]) {
+                dfs(i, edgesList, res, visited);
+            }
         }
     }
 
