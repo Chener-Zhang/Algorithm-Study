@@ -1,20 +1,20 @@
 package com.company;
 
-import com.company.GraphAlgorithm.dfsTraversal;
-import com.company.GraphAlgorithm.graphTestGenerator;
+import com.company.GraphAlgorithm.numIslands;
 
 public class Main {
 
     public static void main(String[] args) {
-        graphTestGenerator generateTest = new graphTestGenerator();
+        numIslands numIslands = new numIslands();
 
-        dfsTraversal dfsTraversal = new dfsTraversal();
-        dfsTraversal.dfs_traversal(6, generateTest.toArrayList(new int[][]{
-                {0, 1},
-                {0, 2},
-                {1, 4},
-                {3, 5}
-        }));
+        numIslands.numIslands(new char[][]{
+                        {'1', '1', '1', '1', '0'},
+                        {'1', '1', '0', '1', '0'},
+                        {'1', '1', '0', '0', '0'},
+                        {'0', '0', '0', '1', '0'}
+                }
+        );
+
     }
 
 

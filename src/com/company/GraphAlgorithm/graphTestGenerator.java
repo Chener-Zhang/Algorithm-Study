@@ -5,10 +5,10 @@ import java.util.ArrayList;
 public class graphTestGenerator {
     public String generateTest() {
         String s = "[\n" +
-                "[0, 1],\n" +
-                "[0, 2],\n" +
-                "[1, 4],\n" +
-                "[3, 5]\n" +
+                "  [\"1\",\"1\",\"1\",\"1\",\"0\"],\n" +
+                "  [\"1\",\"1\",\"0\",\"1\",\"0\"],\n" +
+                "  [\"1\",\"1\",\"0\",\"0\",\"0\"],\n" +
+                "  [\"0\",\"0\",\"0\",\"0\",\"0\"]\n" +
                 "]";
         s = s.replace("[", "{");
         s = s.replace("]", "}");
