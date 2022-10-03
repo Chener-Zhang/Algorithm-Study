@@ -1,60 +1,52 @@
 package com.company.GraphAlgorithm;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.LinkedList;
-import java.util.Queue;
+import java.util.Stack;
 
 public class bfsTraversal {
+    ArrayList<Integer> res;
 
     public ArrayList<Integer> bfsTraversal(Integer n, ArrayList<ArrayList<Integer>> edges) {
+        //Result init
+        res = new ArrayList<>();
         // Write your code here.
-        LinkedList<Integer>[] adjacentArr = new LinkedList[n];
-        ArrayList<Integer> res = new ArrayList<>();
-
+        LinkedList<Integer>[] edgesList = new LinkedList[n];
         for (int i = 0; i < n; i++) {
-            adjacentArr[i] = new LinkedList<>();
+            edgesList[i] = new LinkedList();
         }
-        for (ArrayList<Integer> list : edges) {
-            adjacentArr[list.get(0)].add(list.get(1));
-            adjacentArr[list.get(1)].add(list.get(0));
+
+        for (ArrayList<Integer> arr : edges) {
+            edgesList[arr.get(0)].add(arr.get(1));
+            edgesList[arr.get(1)].add(arr.get(0));
         }
         boolean[] visited = new boolean[n];
-        for (int i = 0; i < n; i++) {
-            helper(i, adjacentArr, res, visited);
-        }
 
+        for (int i = 0; i < n; i++) {
+            if (!visited[i]) {
+                bfs(visited, i, edgesList);
+            }
+        }
         System.out.println(res.toString());
         return res;
     }
 
-    public void helper(int start, LinkedList<Integer>[] adjacentArr, ArrayList<Integer> res, boolean[] visited) {
-        Queue<Integer> queue = new LinkedList<>();
-        queue.add(start);
-        if (!visited[start]) {
-            visited[start] = true;
-            res.add(start);
-        }
-
-        while (!queue.isEmpty()) {
-            int current = queue.remove();
-            Iterator<Integer> iterator = adjacentArr[current].iterator();
-            int tracker;
-            while (iterator.hasNext()) {
-                tracker = iterator.next();
-                if (!visited[tracker]) {
-                    res.add(tracker);
-                    visited[tracker] = true;
-                    queue.add(tracker);
+    public void bfs(boolean[] visited, int start, LinkedList<Integer>[] edgesList) {
+        Stack<Integer> stack = new Stack();
+        stack.push(start);
+        visited[start] = true;
+        res.add(start);
+        while (!stack.isEmpty()) {
+            int current = stack.pop();
+            for (int i : edgesList[current]) {
+                if (!visited[i]) {
+                    stack.add(i);
+                    visited[i] = true;
+                    res.add(i);
                 }
             }
         }
     }
 
-    public void printer(LinkedList<Integer>[] adjacentArr) {
-        for (LinkedList<Integer> current : adjacentArr) {
-            System.out.println(current.toString());
-        }
 
-    }
 }
