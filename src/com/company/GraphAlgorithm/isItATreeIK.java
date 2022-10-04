@@ -1,10 +1,40 @@
 package com.company.GraphAlgorithm;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
+import java.util.*;
 
 public class isItATreeIK {
 
+    public boolean validTree(int n, int[][] edges) {
+        LinkedList<Integer>[] edgesList = new LinkedList[n];
+        for (int i = 0; i < n; i++) {
+            edgesList[i] = new LinkedList();
+        }
+        for (int[] arr : edges) {
+            edgesList[arr[0]].add(arr[1]);
+            edgesList[arr[1]].add(arr[0]);
+        }
+        Map<Integer, Integer> parents = new HashMap();
+        Stack<Integer> stack = new Stack<Integer>();
+        stack.add(0);
+        parents.put(0, -1);
+
+        while (!stack.isEmpty()) {
+            int current = stack.pop();
+            for (int i : edgesList[current]) {
+                //current = 0; edgesList[0] = [1,2,3]
+                //if 1 == parents.get(1) = -1 ?
+                if (i == parents.get(current)) {
+                    continue;
+                }
+                if (parents.containsKey(i)) {
+                    return false;
+                }
+                stack.add(i);
+                parents.put(i, current);
+            }
+        }
+        return parents.size() == n;
+    }
 
     public Boolean is_it_a_tree(Integer node_count, ArrayList<Integer> edge_start, ArrayList<Integer> edge_end) {
         // Write your code here.

@@ -4,10 +4,7 @@ import java.util.ArrayList;
 
 public class graphTestGenerator {
     public String generateTest() {
-        String s = "[0, 1],\n" +
-                "[0, 2],\n" +
-                "[0, 4],\n" +
-                "[2, 3]";
+        String s = "[[0,1],[0,2],[0,3],[1,4]]";
         s = s.replace("[", "{");
         s = s.replace("]", "}");
         System.out.println(s);
