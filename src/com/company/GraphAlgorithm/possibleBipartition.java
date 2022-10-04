@@ -1,11 +1,52 @@
 package com.company.GraphAlgorithm;
 
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.Map;
-import java.util.Queue;
+import java.util.*;
 
 public class possibleBipartition {
+    public Boolean can_be_divided(Integer num_of_people, ArrayList<Integer> dislike1, ArrayList<Integer> dislike2) {
+        // Write your code here.
+        LinkedList<Integer>[] edgeList = new LinkedList[num_of_people];
+        int[] flags = new int[num_of_people];
+        Arrays.fill(flags, -1);
+
+        for (int i = 0; i < num_of_people; i++) {
+            edgeList[i] = new LinkedList();
+        }
+        for (int i = 0; i < dislike1.size(); i++) {
+            edgeList[dislike1.get(i)].add(dislike2.get(i));
+            edgeList[dislike2.get(i)].add(dislike1.get(i));
+        }
+        printer(edgeList);
+
+        boolean res = true;
+        for (int i = 0; i < num_of_people; i++) {
+            if (flags[i] != -1) continue;
+            flags[i] = 0;
+            res &= bfs(edgeList, i, flags);
+        }
+        System.out.println(res);
+        return res;
+    }
+
+    public boolean bfs(LinkedList<Integer>[] edgeList, int start, int[] flags) {
+        Queue<Integer> queue = new LinkedList<>();
+        queue.add(start);
+        while (!queue.isEmpty()) {
+            int current = queue.remove();
+            int currentFlag = flags[current];
+
+            for (int i : edgeList[current]) {
+                if (flags[i] != -1) {
+                    if (flags[i] == currentFlag) return false;
+                } else {
+                    flags[i] = 1 - currentFlag;
+                    queue.add(i);
+                }
+            }
+        }
+        return true;
+    }
+
 
     public boolean possibleBipartition(int n, int[][] dislikes) {
         Map<Integer, Integer> map = new HashMap<>();
