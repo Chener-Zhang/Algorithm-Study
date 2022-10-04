@@ -21,8 +21,7 @@ public class isItATreeIK {
         while (!stack.isEmpty()) {
             int current = stack.pop();
             for (int i : edgesList[current]) {
-                //current = 0; edgesList[0] = [1,2,3]
-                //if 1 == parents.get(1) = -1 ?
+
                 if (i == parents.get(current)) {
                     continue;
                 }
