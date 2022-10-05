@@ -1,15 +1,15 @@
 package com.company;
 
-import com.company.GraphAlgorithm.graphTestGenerator;
-import com.company.GraphAlgorithm.isItATreeIK;
+import com.company.GraphAlgorithm.findJudge;
 
 public class Main {
 
     public static void main(String[] args) {
-        isItATreeIK isItATreeIK = new isItATreeIK();
-        graphTestGenerator graphTestGenerator = new graphTestGenerator();
-//        graphTestGenerator.generateTest();
-        isItATreeIK.validTree(5,new int[][]{{0,1},{0,2},{0,3},{1,4}});
+
+
+        findJudge findJudge = new findJudge();
+        findJudge.findJudge(3, new int[][]{{1, 3}, {2, 3},{3,1}});
+
     }
 
 
