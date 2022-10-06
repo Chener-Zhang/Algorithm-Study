@@ -6,15 +6,10 @@ import java.util.Queue;
 import java.util.Set;
 
 public class minKnightMoves {
-    int[][] visited;
-    int xSize;
-    int ySize;
+
     private final int[][] DIRECTIONS = new int[][]{{2, 1}, {1, 2}, {-1, 2}, {-2, 1}, {-2, -1}, {-1, -2}, {1, -2}, {2, -1}};
 
     public int minKnightMoves(int x, int y) {
-
-        xSize = x + 5;
-        ySize = y + 5;
 
         Set<String> visited = new HashSet<>();
         visited.add("0,0");
