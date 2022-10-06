@@ -1,6 +1,7 @@
 package com.company;
 
 import com.company.GraphAlgorithm.FloodFill;
+import com.company.GraphAlgorithm.minKnightMoves;
 
 import java.util.ArrayList;
 
@@ -8,8 +9,9 @@ public class Main {
 
     public static void main(String[] args) {
 
-        FloodFill FloodFill = new FloodFill();
-        FloodFill.floodFill(new int[][]{{0, 2, 1}, {1, 1, 2}, {2, 5, 4}}, 1, 0, 9);
+        minKnightMoves minKnightMoves = new minKnightMoves();
+        System.out.println(minKnightMoves.minKnightMoves(5, 5));
+
 
     }
 
