@@ -9,13 +9,19 @@ public class alienOrder {
     Map<Character, Integer> visited;
     String res;
 
+
     public String alienOrder(String[] words) {
-        constructEdges(words);
-        return toString();
+        boolean boo = constructEdges(words);
+        if (boo) return new StringBuilder(TopoSort()).reverse().toString();
+
+        return "";
     }
 
     public String TopoSort() {
         visited = new HashMap();
+        for (Character key : edgesList.keySet()) {
+            visited.put(key, 0);
+        }
         res = "";
 
 
@@ -30,6 +36,7 @@ public class alienOrder {
         if (visited.get(start) == 2) return true;
         if (visited.get(start) == 1) return false;
         ArrayList<Character> current = edgesList.get(start);
+
         visited.put(start, 1);
 
         for (Character i : current) {
@@ -37,10 +44,11 @@ public class alienOrder {
         }
         visited.put(start, 2);
         res += start;
+
         return true;
     }
 
-    public void constructEdges(String[] words) {
+    public boolean constructEdges(String[] words) {
         edgesList = new HashMap<>();
         for (String word : words) {
             char[] arr = word.toCharArray();
@@ -55,6 +63,9 @@ public class alienOrder {
             //hello world
             String word1 = words[i - 1];
             String word2 = words[i];
+            if (word1.length() > word2.length() && word1.startsWith(word2)) {
+                return false;
+            }
             int min = Math.min(word1.length(), word2.length());
             for (int k = 0; k < min; k++) {
                 if (word1.charAt(k) != word2.charAt(k)) {
@@ -63,5 +74,6 @@ public class alienOrder {
                 }
             }
         }
+        return true;
     }
 }
