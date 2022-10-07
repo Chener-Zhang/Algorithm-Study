@@ -5,13 +5,21 @@ import java.util.Queue;
 
 public class orangesRotting {
     static int[][] directions = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
+    int fresh;
 
     public int orangesRotting(int[][] grid) {
         Queue<int[]> queue = new LinkedList<>();
-
-        if (grid[0][0] == 2) {
-            queue.add(new int[]{0, 0});
+        fresh = 0;
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[0].length; j++) {
+                if (grid[i][j] == 2) {
+                    queue.add(new int[]{i, j});
+                } else if (grid[i][j] == 1) {
+                    fresh++;
+                }
+            }
         }
+        if (fresh == 0) return 0;
         int count = -1;
         while (!queue.isEmpty()) {
             int len = queue.size();
@@ -24,17 +32,13 @@ public class orangesRotting {
                     if (valid(grid, newRow, newCol)) {
                         queue.add(new int[]{newRow, newCol});
                         grid[newRow][newCol] = 2;
+                        fresh--;
                     }
                 }
             }
         }
-        for (int[] arr : grid) {
-            for (int i : arr) {
-                if (i == 1)
-                    return -1;
-            }
-        }
-        return count;
+
+        return fresh == 0 ? count : -1;
     }
 
     public boolean valid(int[][] grid, int row, int col) {
