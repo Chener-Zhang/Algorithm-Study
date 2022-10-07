@@ -1,9 +1,9 @@
 package com.company;
 
-import com.company.GraphAlgorithm.FloodFill;
 import com.company.GraphAlgorithm.minKnightMoves;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class Main {
 
@@ -15,24 +15,43 @@ public class Main {
 
     }
 
-    static ArrayList<ArrayList<Integer>> flood_fill(Integer pixel_row, Integer pixel_column, Integer new_color, ArrayList<ArrayList<Integer>> image) {
+
+    static ArrayList<Integer> res;
+
+    static ArrayList<Integer> course_schedule(Integer n, ArrayList<ArrayList<Integer>> prerequisites) {
         // Write your code here.
-        if (new_color != image.get(pixel_row).get(pixel_column))
-            dfs(image, pixel_row, pixel_column, new_color, image.get(pixel_row).get(pixel_column));
-        return image;
+        LinkedList<Integer>[] edgesList = new LinkedList[n];
+        for (int i = 0; i < n; i++) {
+            edgesList[i] = new LinkedList();
+        }
+
+        for (ArrayList<Integer> list : prerequisites) {
+            edgesList[list.get(1)].add(list.get(0));
+        }
+
+        int[] visited = new int[n];
+        res = new ArrayList<Integer>();
+
+        for (int i = 0; i < n; i++) {
+            if (!dfs(edgesList, visited, i)) return new ArrayList();
+        }
+
+
+        return res;
+
     }
 
-    static void dfs(ArrayList<ArrayList<Integer>> image, Integer sr, Integer sc, Integer color, Integer orginalColor) {
-        if (sr < 0 || sc < 0 || sr == image.size() || sc == image.get(0).size()) return;
-        if (image.get(sr).get(sc) == orginalColor) {
-            image.get(sr).set(sc, color);
-            dfs(image, sr - 1, sc, color, orginalColor);
-            dfs(image, sr + 1, sc, color, orginalColor);
-            dfs(image, sr, sc + 1, color, orginalColor);
-            dfs(image, sr, sc - 1, color, orginalColor);
-        } else {
-            return;
+    static boolean dfs(LinkedList<Integer>[] edgesList, int[] visited, int start) {
+        if (visited[start] == 2) return true;
+        if (visited[start] == 1) return false;
+        visited[start] = 1;
+        for (int neighbor : edgesList[start]) {
+            if (!dfs(edgesList, visited, neighbor)) return false;
         }
+        visited[start] = 2;
+        res.add(start);
+        return true;
     }
+
 
 }
