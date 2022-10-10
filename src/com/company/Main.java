@@ -15,6 +15,7 @@ public class Main {
         list.add(8);
         list.add(9);
 
-        rodCutting.get_maximum_profit(list);
+
+        System.out.println(rodCutting.get_maximum_profit(list));
     }
 }
