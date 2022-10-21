@@ -1,10 +1,33 @@
 package com.company;
 
+import com.company.TreeAlgorithm.ListNode;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 public class Tools {
+    public ListNode listNodeCreator(int[] arr) {
+        ListNode head = new ListNode(arr[0]);
+        ListNode current = head;
+        for (int i = 1; i < arr.length; i++) {
+            current.next = new ListNode(arr[i]);
+            current = current.next;
+        }
+        //printer
+        ListNodePrinter(head);
+        return head;
+    }
+
+    public void ListNodePrinter(ListNode head) {
+        ListNode current = head;
+        while (current != null) {
+            System.out.print(current.val + " - > ");
+            current = current.next;
+        }
+        System.out.print("null");
+    }
+
     //Tools---------------------------------------------------------------------------------------------------------->
     public ArrayList<Integer> toArrayList(int[] arr) {
         ArrayList<Integer> res = new ArrayList<Integer>();
