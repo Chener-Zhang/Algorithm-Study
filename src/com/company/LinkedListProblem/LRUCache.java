@@ -20,31 +20,30 @@ public class LRUCache {
 
     public int get(int key) {
         //check if it exist
-        if (map.containsKey(key)) {
-            moveToHead(key);
-            return map.get(key).value;
-        }
-        System.out.println(-1);
-        return -1;
-
+        doubleLinkedList target = map.get(key);
+        if (target == null) return -1;
+        moveToHead(target);
+        return target.value;
     }
 
-    public void moveToHead(int key) {
-        remove(map.get(key));
-        add(map.get(key));
+    public void moveToHead(doubleLinkedList node) {
+        remove(node);
+        add(node);
     }
 
     public void put(int key, int value) {
         //if map contains key
-        if (map.containsKey(key)) {
+        doubleLinkedList node = map.getOrDefault(key, null);
+        if (node != null) {
             map.get(key).value = value;
-            moveToHead(key);
+            moveToHead(node);
         }
         //if map does not contains key
         else {
             //continue add regulary
-            map.put(key, new doubleLinkedList(key, value));
-            add(map.get(key));
+            node = new doubleLinkedList(key, value);
+            map.put(key, node);
+            add(node);
             currentCapacity++;
             if (this.currentCapacity > this.capacity) {
                 map.remove(cold.pre.key);
@@ -53,14 +52,14 @@ public class LRUCache {
         }
     }
 
-    public void printer() {
-        doubleLinkedList current = hot;
-        while (current != null) {
-            System.out.print(current.value + " - > ");
-            current = current.next;
-        }
-        System.out.print("null\n");
-    }
+//    public void printer() {
+//        doubleLinkedList current = hot;
+//        while (current != null) {
+//            System.out.print(current.value + " - > ");
+//            current = current.next;
+//        }
+//        System.out.print("null\n");
+//    }
 
     //correct
     public void add(doubleLinkedList node) {
