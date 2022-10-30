@@ -2,15 +2,19 @@ package com.company.DynamicProgramming;
 
 public class maximalSquare {
     public int maximalSquare(char[][] matrix) {
-        int[][] dp = new int[matrix.length][matrix[0].length];
-        for (int i = 1; i < matrix.length; i++) {
-            for (int j = 1; j < matrix[0].length; j++) {
-                if (matrix[i - 1][j - 1] == 1) {
-                    dp[i][j] = 1 + Math.min(dp[i - 1][j], Math.min(dp[i - 1][j - 1], dp[i][j - 1]));
+        int m = matrix.length;
+        int n = m > 0 ? matrix[0].length : 0;
+        int[][] dp = new int[m + 1][n + 1];
+        int max = 0;
+        for (int row = 1; row <= m; row++) {
+            for (int col = 1; col <= n; col++) {
+                if (matrix[row - 1][col - 1] == '1') {
+                    dp[row][col] = Math.min(Math.min(dp[row - 1][col], dp[row][col - 1]), dp[row - 1][col - 1]) + 1;
+                    max = Math.max(max, dp[row][col]);
                 }
             }
         }
-        int last = dp[matrix.length - 1][matrix[0].length - 1];
-        return last * last;
+
+        return max * max;
     }
 }
