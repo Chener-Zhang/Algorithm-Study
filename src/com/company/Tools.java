@@ -1,6 +1,7 @@
 package com.company;
 
 import com.company.TreeAlgorithm.ListNode;
+import com.company.TreeAlgorithm.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -70,5 +71,20 @@ public class Tools {
         }
         System.out.println(arrayList.toString());
         return arrayList;
+    }
+
+    public TreeNode treeConstruction(int[] arr, int i) {
+        TreeNode root = null;
+        // Base case for recursion
+        if (i < arr.length) {
+            root = new TreeNode(arr[i]);
+
+            // insert left child
+            root.left = treeConstruction(arr, 2 * i + 1);
+
+            // insert right child
+            root.right = treeConstruction(arr, 2 * i + 2);
+        }
+        return root;
     }
 }
