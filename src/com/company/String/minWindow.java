@@ -2,12 +2,8 @@ package com.company.String;
 
 import com.company.LeetcodeProblem;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class minWindow implements LeetcodeProblem {
-    Map<Character, Integer> requirement;
-    Map<Character, Integer> map;
+
     int require = 0;
     int have = 0;
 
@@ -15,13 +11,13 @@ public class minWindow implements LeetcodeProblem {
         if (s.length() == 0 || t.length() == 0) {
             return "";
         }
-        this.requirement = new HashMap<>();
+        int[] requirement = new int[128];
         int len = s.length();
         for (char c : t.toCharArray()) {
-            requirement.put(c, requirement.getOrDefault(c, 0) + 1);
+            requirement[c] += 1;
         }
-        this.map = new HashMap<>();
-        this.require = requirement.size();
+        int[] map = new int[128];
+        this.require = getRequire(requirement);
         int min = len;
         int[] ans = new int[2];
         int l = 0;
@@ -29,9 +25,9 @@ public class minWindow implements LeetcodeProblem {
         for (int i = 0; i < len; i++) {
             char c = s.charAt(i);
             //update the map
-            map.put(c, map.getOrDefault(c, 0) + 1);
+            map[c] += 1;
             //update have;
-            if (requirement.containsKey(c) && requirement.get(c) == map.get(c)) {
+            if (requirement[c] != 0 && requirement[c] == map[c]) {
                 have++;
             }
             //if meet the requirement
@@ -39,9 +35,9 @@ public class minWindow implements LeetcodeProblem {
 
             while (have == require) {
                 char toRemove = s.charAt(l);
-                map.put(toRemove, map.get(toRemove) - 1);
+                map[toRemove] -= 1;
 
-                if (requirement.containsKey(toRemove) && this.requirement.get(toRemove) > this.map.get(toRemove)) {
+                if (requirement[toRemove] != 0 && requirement[toRemove] > map[toRemove]) {
                     have--;
                 }
                 if (i - l < min) {
@@ -57,11 +53,19 @@ public class minWindow implements LeetcodeProblem {
         return s.substring(ans[0], ans[1]);
     }
 
+    public int getRequire(int[] arr) {
+        int sum = 0;
+        for (int i : arr) {
+            if (i != 0) {
+                sum++;
+            }
+        }
+        return sum;
+    }
 
     @Override
     public void run() {
-        System.out.println(minWindow("geeksforgeeks", "eeekg"));
-
+        System.out.println(minWindow("ADOBECODEBANC", "ABBC"));
 
     }
 }
