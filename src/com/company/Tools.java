@@ -1,10 +1,34 @@
 package com.company;
 
+import com.company.TreeAlgorithm.ListNode;
+import com.company.TreeAlgorithm.TreeNode;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 public class Tools {
+    public ListNode listNodeCreator(int[] arr) {
+        ListNode head = new ListNode(arr[0]);
+        ListNode current = head;
+        for (int i = 1; i < arr.length; i++) {
+            current.next = new ListNode(arr[i]);
+            current = current.next;
+        }
+        //printer
+        ListNodePrinter(head);
+        return head;
+    }
+
+    public void ListNodePrinter(ListNode head) {
+        ListNode current = head;
+        while (current != null) {
+            System.out.print(current.val + " - > ");
+            current = current.next;
+        }
+        System.out.print("null");
+    }
+
     //Tools---------------------------------------------------------------------------------------------------------->
     public ArrayList<Integer> toArrayList(int[] arr) {
         ArrayList<Integer> res = new ArrayList<Integer>();
@@ -47,5 +71,20 @@ public class Tools {
         }
         System.out.println(arrayList.toString());
         return arrayList;
+    }
+
+    public TreeNode treeConstruction(int[] arr, int i) {
+        TreeNode root = null;
+        // Base case for recursion
+        if (i < arr.length) {
+            root = new TreeNode(arr[i]);
+
+            // insert left child
+            root.left = treeConstruction(arr, 2 * i + 1);
+
+            // insert right child
+            root.right = treeConstruction(arr, 2 * i + 2);
+        }
+        return root;
     }
 }
