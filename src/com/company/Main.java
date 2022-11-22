@@ -1,12 +1,12 @@
 package com.company;
 
 
-import com.company.LinkedListProblem.removeNthFromEnd;
+import com.company.String.checkInclusion;
 
 public class Main {
 
     public static void main(String[] args) {
-        LeetcodeProblem leetcodeProblem = new removeNthFromEnd();
+        LeetcodeProblem leetcodeProblem = new checkInclusion();
         leetcodeProblem.run();
     }
 }
