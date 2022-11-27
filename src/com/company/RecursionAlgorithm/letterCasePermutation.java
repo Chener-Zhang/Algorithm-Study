@@ -1,9 +1,11 @@
 package com.company.RecursionAlgorithm;
 
+import com.company.LeetcodeProblem;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class letterCasePermutation {
+public class letterCasePermutation implements LeetcodeProblem {
     public List<String> letterCasePermutation(String s) {
         List<String> res = new ArrayList<>();
         char[] arr = s.toCharArray();
@@ -27,5 +29,11 @@ public class letterCasePermutation {
         } else {
             helper(level + 1, res, arr);
         }
+    }
+
+
+    @Override
+    public void run() {
+        letterCasePermutation("hellw");
     }
 }
