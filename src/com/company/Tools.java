@@ -27,6 +27,7 @@ public class Tools {
             current = current.next;
         }
         System.out.print("null");
+        System.out.println();
     }
 
     //Tools---------------------------------------------------------------------------------------------------------->

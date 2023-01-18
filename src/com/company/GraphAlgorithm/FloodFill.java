@@ -1,6 +1,8 @@
 package com.company.GraphAlgorithm;
 
-public class FloodFill {
+import com.company.LeetcodeProblem;
+
+public class FloodFill implements LeetcodeProblem {
     int[][] image;
 
     public int[][] floodFill(int[][] image, int sr, int sc, int color) {
@@ -23,4 +25,9 @@ public class FloodFill {
 
     }
 
+    @Override
+    public void run() {
+//        floodFill(new int[][]{{1, 1, 1}, {1, 1, 0}, {1, 0, 1}}, 1, 1, 2);
+        floodFill(new int[][]{{0, 0, 0}, {0, 0, 0}}, 1, 0, 2);
+    }
 }

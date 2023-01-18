@@ -1,9 +1,11 @@
 package com.company.GraphAlgorithm;
 
+import com.company.LeetcodeProblem;
+
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class orangesRotting {
+public class orangesRotting implements LeetcodeProblem {
     static int[][] directions = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
     int fresh;
 
@@ -46,5 +48,11 @@ public class orangesRotting {
             return true;
         }
         return false;
+    }
+
+
+    @Override
+    public void run() {
+        orangesRotting(new int[][]{{2, 1, 1}, {1, 1, 0}, {0, 1, 1}});
     }
 }
